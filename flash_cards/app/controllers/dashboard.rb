@@ -13,7 +13,7 @@ end
 get '/start_game' do #decks/:id
 
 # VIEW A DECK (ie. Start playing)
-# erb :gameplay
+# erb :start_game
 end
 
 post '/deck/new' do #/decks
@@ -25,7 +25,7 @@ end
 
 get '/deck/update' do #/decks/:id/edit
 
-#take to erb: edit_deck HTML form with prefilled card data
+#take to erb: update_deck HTML form with prefilled card data
 end
 
 patch '/deck/update' do
