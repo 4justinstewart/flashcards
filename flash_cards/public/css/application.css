@@ -7,3 +7,53 @@
 th {
   text-align: left;
 }
+
+div.topnav {
+  background-color: black;
+  padding: 15px 10px;
+  /*margin: 0;*/
+}
+
+/*nav ul {
+  margin: 0;
+  padding: 0;
+}*/
+
+nav div {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25em;   
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+div#toggling-nav {
+  float: right;
+}
+
+div#signout {
+  float: right;
+}
+
+input#signout-button {
+  text-decoration:none;
+  background-color: black;
+  color: white;
+  border: 0px none;
+  text-align:center;
+  padding: 0px 6px;
+  /* Fixes extra padding issue in IE */
+  width:auto;
+  overflow:visible;
+}
+
+input#signout-button:hover {
+  color: yellow;
+}
+

@@ -1,23 +1,24 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  
+  <div class="login-form">
+    <h2>Login</h2>
+    <form method="post" action ="/login">
+      <div><input type="text" name="email" placeholder="Email" /></div>
+      <div><input type="text" name="password" placeholder="Password" /></div>
+      <div><input type="submit" value="Login" /></div>
+    </form>
+  </div>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <div class="signup-form">
+    <h2>Sign Up</h2>
+    <form method="post" action="/signup">
+      <div><input type="text" name="user[first_name]" placeholder="First Name" /></div>
+      <div><input type="text" name="user[last_name" placeholder="Last Name" /></div>
+      <div><input type="text" name="user[email]" placeholder="Email" /></div>
+      <div><input type="text" name="user[password]" placeholder="Password" /></div>
+      <div><input type="text" name="verify_password" placeholder="Verify Password" /></div>
+      <div><input type="submit" value="Sign Up" /></div>
+    </form>
+  </div>
+
 </div>
