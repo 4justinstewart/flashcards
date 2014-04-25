@@ -11,13 +11,7 @@ th {
 div.topnav {
   background-color: black;
   padding: 15px 10px;
-  /*margin: 0;*/
 }
-
-/*nav ul {
-  margin: 0;
-  padding: 0;
-}*/
 
 nav div {
   display: inline-block;
