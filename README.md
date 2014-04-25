@@ -5,25 +5,32 @@ flashcards
 
 ## GROUP ROLES
 
-- Layout View   --> Ron
+X Layout View
 
-- User Auth
  
-- Migration     --> Matt
-- Models
-- Seeds for testing   --->Rohan
+X Migration
+X Models
+X Seeds for testing  
 
-- Routes        --> Justin / Paige
- - Index
-  - /index
- - Decks
-  - /decks/:d_id 
- - Round(Game)
-  - /round/:r_id 
+- Routes  
 
+- Model Validation
 
-- Users and sessions
+- Users and sessions  --> RON
+- User Auth
+- User CRUD*
 
 - Views
+ - Dashboard --> PAIGE
 
-- Game Function
+- Build Game
+ - Create deck   --> MATT
+ - Create cards
+ - CRUD
+
+- Game Function   --> JUSTIN
+ - Logic
+ - UI*
+
+- Game statistics  --> ROHAN
+ - D3
