@@ -6,8 +6,6 @@ flashcards
 ## GROUP ROLES
 
 X Layout View
-
- 
 X Migration
 X Models
 X Seeds for testing  
