@@ -1,4 +1,4 @@
-User.create(first_name: "deck", last_name: "creator", email: "deck_creator@email.com", password: "password")
+  User.create(first_name: "deck", last_name: "creator", email: "deck_creator@email.com", password: "password")
 
 User.create(first_name: "round", last_name: "player", email: "round_player@email.com", password: "password")
 
