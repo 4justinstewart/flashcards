@@ -1,8 +1,11 @@
 enable :sessions
 
-before '/*' do 
-  current_user
-  redirect '/' unless session[:user_id]
+before '/dashboard' do 
+  # redirect '/' unless session[:user_id]
+  current_user 
+  unless @user 
+    redirect '/'
+  end
 end
 
 get '/' do
@@ -31,7 +34,7 @@ post '/signup' do
   end
 end
 
-post '/logout' do 
+post '/signout' do 
   session[:user_id] = nil
   redirect '/'
 end
