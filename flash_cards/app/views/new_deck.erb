@@ -1,1 +1,15 @@
-new_deck.erb
+<!-- NEW DECK FORM -->
+
+<!-- IF VALIDATION FAILS ERRORS -->
+
+<div class="deck-crud">
+  <form action="/deck/new" method="post">
+
+    <input type="text" name="deck_name" placeholder="Deck Name"></input>
+
+    <button type="submit">Create New Deck!</button>
+  </form>
+<div>
+
+
+<!-- NEED TO REDIRECT TO "NEW CARD VIEW" AFTER POST REQUEST -->
