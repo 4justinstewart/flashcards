@@ -1,14 +1,18 @@
-<!-- UPDATE DECK FORM (include delete button) -->
+<!-- NEW CARD FORM -->
 
-<div class="deck-crud">
-  <h2>Update Deck Name</h2>
-  <form action="/deck/update/<%= @deck.id %>" method="post">
+<!-- IF VALIDATION FAILS ERRORS MESSAGE-->
 
-    <input type="text" name="deck_name" value="<%= @deck.name %>"></input>
+<div class="card-crud">
+  <h2>Creat some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
+  <form action="/card/new/<%= @deck.id %>" method="post">
 
-    <button type="submit">Update Deck!</button>
+    <input type="text" name="card_question" placeholder="Question"></input>
+    <input type="text" name="card_answer" placeholder="Answer"></input>
+
+    <button type="submit">Create New Card!</button>
   </form>
 <div>
+
 
 <div class="show-cards">
   <h3>All Current Cards</h3>
@@ -28,10 +32,4 @@
   </tr>
     <% end %>
   </table>
-</div>
- <br><br>
-<div class="delete-deck">
-<form method="post" action="/deck/delete/<%= @deck.id %>">
-        <input type="submit" value="Delete Deck Forever">
-      </form>
 </div>
