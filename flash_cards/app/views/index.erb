@@ -2,22 +2,22 @@
   
   <div class="login-form">
     <h2>Login</h2>
-    <form>
-      <input type="text" name="email" placeholder="Email" />
-      <input type="text" name="password" placeholder="" />
-      <input type="submit" value="Login" />
+    <form method="post" action ="/login">
+      <div><input type="text" name="email" placeholder="Email" /></div>
+      <div><input type="text" name="password" placeholder="Password" /></div>
+      <div><input type="submit" value="Login" /></div>
     </form>
   </div>
 
   <div class="signup-form">
     <h2>Sign Up</h2>
-    <form>
-      <input type="text" name="user[first_name]" placeholder="First Name" />
-      <input type="text" name="user[last_name" placeholder="Last Name" />
-      <input type="text" name="user[email]" placeholder="Email" />
-      <input type="text" name="user[password]" placeholder="Password" />
-      <input type="text" name="verify_password" placeholder="Verify Password" />
-      <input type="submit" value="Sign Up" />
+    <form method="post" action="/signup">
+      <div><input type="text" name="user[first_name]" placeholder="First Name" /></div>
+      <div><input type="text" name="user[last_name" placeholder="Last Name" /></div>
+      <div><input type="text" name="user[email]" placeholder="Email" /></div>
+      <div><input type="text" name="user[password]" placeholder="Password" /></div>
+      <div><input type="text" name="verify_password" placeholder="Verify Password" /></div>
+      <div><input type="submit" value="Sign Up" /></div>
     </form>
   </div>
 
