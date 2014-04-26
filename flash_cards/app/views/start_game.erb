@@ -1,1 +1,13 @@
-start_game.erb
+<div class='container'>
+  <h1>Type your answer into each flashcard</h1>
+
+  <h3><%= @current_card.question %></h3>
+
+  <form action='/start_game' method='get'>
+    <input type='hidden' name='cards' value='<% "#{@deck_of_cards}" %>'/>
+    <input type="text" placeholder="What's the answer?" name="answer"/>
+    <button type='submit'>Next Card</button>
+  </form>
+
+
+</div>

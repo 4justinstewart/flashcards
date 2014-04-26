@@ -11,13 +11,7 @@ th {
 div.topnav {
   background-color: black;
   padding: 15px 10px;
-  /*margin: 0;*/
 }
-
-/*nav ul {
-  margin: 0;
-  padding: 0;
-}*/
 
 nav div {
   display: inline-block;
@@ -26,7 +20,7 @@ nav div {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.25em;   
+  font-size: 1.25em;
 }
 
 nav a:hover {
@@ -55,5 +49,16 @@ input#signout-button {
 
 input#signout-button:hover {
   color: yellow;
+}
+
+
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 200px;
+}
+
+p#error-message {
+  color: red;
 }
 
