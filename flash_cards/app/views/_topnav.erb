@@ -1,7 +1,7 @@
 <div class="topnav">
   <nav>
       <div><a href='/dashboard'>Dashboard</a></div>
-      <% if @user %>
+      <% if session[:user_id] %>
         <div id="signout"><form method="post" action="/signout">
           <input id="signout-button" type="submit" value="Sign Out"/>
         </form></div>

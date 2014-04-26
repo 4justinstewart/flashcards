@@ -1,5 +1,10 @@
 enable :sessions
 
+get '/my_decks' do
+  @my_decks = Deck.where(user_id: session[:user_id])
+  p @my_decks
+  erb :my_deck_index
+end
 
 
 get '/deck/new' do
@@ -57,8 +62,8 @@ end
 
 delete '/deck/delete/:d_id' do
   @deck = Deck.find(params[:d_id])
-  # @deck.destroy
-  redirect to '/decks'
+  @deck.destroy
+  redirect to '/my_decks'
 end
 
 post '/card/delete/:d_id/:c_id' do

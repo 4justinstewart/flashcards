@@ -18,7 +18,7 @@
     <td id="c1"><%= card_obj.question %></td>
     <td id="c2"><%= card_obj.answer %></td>
     <td id="c3">
-      <form method="post" action="/card/update/<% @deck.id %>/<%= card_obj.id %>">
+      <form method="post" action="/card/update/<%= @deck.id %>/<%= card_obj.id %>">
         <input type="submit" value="Edit">
       </form></td>
     <td id="c4">
@@ -31,7 +31,8 @@
 </div>
  <br><br>
 <div class="delete-deck">
-<form method="post" action="/deck/delete/<%= @deck.id %>">
-        <input type="submit" value="Delete Deck Forever">
-      </form>
+  <form method="post" action="/deck/delete/<%= @deck.id %>">
+    <input type="hidden" name="_method" value="delete"/>
+    <input type="submit" value="Delete Deck Forever">
+  </form>
 </div>
