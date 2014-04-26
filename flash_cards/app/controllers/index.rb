@@ -13,23 +13,13 @@ get '/' do
 end
 
 post '/login' do
-  # p @user = User.authenticate(params[:email], params[:password])
   @user = User.authenticate(params[:email], params[:password])
-  # if @user
-  #   session[:user_id] = @user.id
-  #   redirect '/dashboard'
-  # end
-
-  # ajax checks the login
-  p @user
   if @user 
     session[:user_id] = @user.id
-    puts "\n \n \n !!!!!!!!!USER PASSES LOGIN!!!!!!!!!"
-    # return "pass"
-    redirect '/dashboard'
+    return "pass" # pass
+    # redirect '/dashboard'
   else
-    puts "\n \n \n !!!!!USER SUCKS AND FAILS TO LOGIN!!!!!!"
-    return fail
+    return "fail" # fail
   end
 end
 

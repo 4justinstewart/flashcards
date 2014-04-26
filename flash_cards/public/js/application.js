@@ -12,14 +12,17 @@ $(document).ready(function() {
   // AJAX plz work
   $('#login-button').on('click', function(event) {
     event.preventDefault();
-    console.log('user presses submitted login form');
     $.ajax({
       type: "POST",
       url: '/login',
-      data: {email: "newguy@example.com", password: "password"},
-      // dataType: "json",
+      data: {email: $('form[action="/login"').find('input[name="email"]').val(), password: $('form[action="/login"').find('input[name="password"]').val()},
       success: function(response) {
-        console.log(response);
+        if (response == "pass") {
+          console.log("pass");
+          $.get('/dashboard');
+        } else {
+          console.log("fail");
+        }
       }
     });
   });
