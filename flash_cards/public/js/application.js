@@ -1,15 +1,20 @@
 $(document).ready(function() {
+  
+// HIDE LOGIN FORM
   $('#signup-toggle').hide();
   $('.login-form').hide();
+
+// TOGGLE BETWEEN TOGGLE/SIGNUP FORMS
   $('#toggling-nav').on('click', function(event) {
     event.preventDefault();
+    $('p#error-message').text("");
     $('#login-toggle').toggle();
     $('#signup-toggle').toggle();
     $('.signup-form').toggle("medium");
     $('.login-form').toggle("medium");
   });
 
-  // AJAX plz work
+// NOTIFY USER OF INCORRECT USERNAME/PASSWORD
   $('#login-button').on('click', function(event) {
     event.preventDefault();
     $.ajax({
@@ -19,13 +24,13 @@ $(document).ready(function() {
       success: function(response) {
         if (response == "pass") {
           console.log("pass");
-          $.get('/dashboard');
+          location.href = "/dashboard";
         } else {
           console.log("fail");
+          $('p#error-message').text("Incorrect email or password.");
         }
       }
     });
   });
-  // -------------
 
 });

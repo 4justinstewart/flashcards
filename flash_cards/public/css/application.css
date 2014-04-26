@@ -58,3 +58,7 @@ table{
     width: 200px;
 }
 
+p#error-message {
+  color: red;
+}
+
