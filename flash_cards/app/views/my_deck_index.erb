@@ -1,0 +1,17 @@
+
+<div class = "container">
+
+  <div>
+    <h1>My Decks</h1>
+    <h2>Click the deck you'd like to update.</h2>
+  </div>
+
+  <div>
+    <ul>
+      <% @my_decks.each do |deck| %>
+        <li><a href="/deck/update/<%= deck.id %>"><%= deck.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
