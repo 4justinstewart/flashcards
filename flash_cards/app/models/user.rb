@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   def get_stat_rounds
   	hash_stat_rounds = {}
   	self.rounds.each do |round|
-  		hash_stat_rounds["#{round.id}"] = round.get_percent_correct 
+  		hash_stat_rounds["#{round.id}"] = round.get_percent_correct
   	end
   	return hash_stat_rounds
   end
@@ -40,10 +40,10 @@ class User < ActiveRecord::Base
   def get_played_deck_ids
   	array_played_deck_ids = []
   	self.rounds.each do |round|
-  		array_played_deck_ids << round.deck_id 
-  	end
+  		array_played_deck_ids << round.deck_id
+    end
   	return array_played_deck_ids.uniq
-
+  end
 #Ron - User Auth
 
   def password
@@ -61,7 +61,6 @@ class User < ActiveRecord::Base
     return @user if @user && @user.password == password
     # return nil
   end
-
 end
 
 
