@@ -14,7 +14,6 @@ end
 
 post '/login' do
   # p @user = User.authenticate(params[:email], params[:password])
-  puts params
   @user = User.authenticate(params[:email], params[:password])
   # if @user
   #   session[:user_id] = @user.id
@@ -26,10 +25,11 @@ post '/login' do
   if @user 
     session[:user_id] = @user.id
     puts "\n \n \n !!!!!!!!!USER PASSES LOGIN!!!!!!!!!"
-    return "pass"
+    # return "pass"
+    redirect '/dashboard'
   else
     puts "\n \n \n !!!!!USER SUCKS AND FAILS TO LOGIN!!!!!!"
-    return "fail"
+    return fail
   end
 end
 

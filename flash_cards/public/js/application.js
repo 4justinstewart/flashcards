@@ -9,17 +9,20 @@ $(document).ready(function() {
     $('.login-form').toggle("medium");
   });
 
-  $('#login-button').click( function(event) {
+  // AJAX plz work
+  $('#login-button').on('click', function(event) {
     event.preventDefault();
+    console.log('user presses submitted login form');
     $.ajax({
+      type: "POST",
       url: '/login',
-      type: 'POST', 
-      data: { email: $('input[name="email"]').value(), password: $('input[name="password"]').value() },
+      data: {email: "newguy@example.com", password: "password"},
+      // dataType: "json",
       success: function(response) {
-        console.log("callback firing");
         console.log(response);
       }
     });
   });
+  // -------------
 
 });
