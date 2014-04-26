@@ -1,8 +1,8 @@
 enable :sessions
 
-before '/dashboard' do 
-  current_user 
-  unless @user 
+before '/dashboard' do
+  current_user
+  unless @user
     redirect '/'
   end
 end
