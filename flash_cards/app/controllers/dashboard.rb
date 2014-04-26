@@ -1,10 +1,10 @@
 enable :sessions
 
-before '/dashboard' do 
+before '/dashboard' do
   # redirect '/' unless session[:user_id]
-  current_user 
-  unless @user 
-    redirect '/'
+  current_user
+  unless @user
+    redirect to '/'
   end
 end
 

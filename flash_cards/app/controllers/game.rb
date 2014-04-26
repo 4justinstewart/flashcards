@@ -2,30 +2,33 @@ enable :sessions
 
 
 
-get '/start_game' do  # VIEW A DECK (ie. Start playing)
-  puts "these are params:"
-  p params
-  # @user = User.find(1)
-
-                           #(session[:id]) # assuming a session[:id] is available
-  if params.empty?
-    @deck_obj = Deck.where(name: 'colors').first #(name: params[:name]) # assuming a 'name' attribute is passed in the form equal to name: value in the hash.
-    @deck_of_cards = Card.where(deck_id: @deck_obj.id).shuffle!
-    p @deck_of_cards
-    @current_card = @deck_of_cards.pop
-
-  else
-    p @deck_of_cards
-    @current_card = params[:cards].pop
-    p @current_card
-  end
-
-  erb :start_game
+get '/start_game/:deck_id' do  # VIEW A DECK (ie. Start playing)
+  @deck = Deck.find(params[:deck_id])
+  @round = Round.create(user_id: session[:user_id], deck_id: @deck.id)
+  @card = @round.pick_card
+  erb :current_game
 end
 
-# post '/submit_answer' do
-#   p params
-#   @cards = params[:cards]
-#   @answer = params[:answer]
-#   redirect to "/start_game", "#{@cards}"
-# end
+post '/current_game/:round_id/:card_id' do
+  @round = Round.find(params[:round_id])
+  @card = Card.find(params[:card_id])
+  @guess = Guess.create(word: params[:response], correct: (params[:response] == @card.answer), round_id: @round.id, card_id: @card.id)
+  redirect to "/current_game/#{@round.id}"
+end
+
+get '/current_game/:round_id' do
+  @round = Round.find(params[:round_id])
+  if @round.all_cards_played?
+    puts "The game has ended."
+    redirect to "/end_game/#{@round.id}"
+  else
+    @card = @round.pick_card
+    erb :current_game
+  end
+end
+
+get '/end_game/:round_id' do
+  @round = Round.find(params[:round_id])
+  @deck = Deck.find(@round.deck_id)
+  erb :end_game
+end
