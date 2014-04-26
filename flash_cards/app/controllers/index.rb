@@ -14,11 +14,12 @@ end
 
 post '/login' do
   @user = User.authenticate(params[:email], params[:password])
-  if @user
+  if @user 
     session[:user_id] = @user.id
-    redirect '/dashboard'
+    return "pass" # pass
+    # redirect '/dashboard'
   else
-    redirect '/'
+    return "fail" # fail
   end
 end
 

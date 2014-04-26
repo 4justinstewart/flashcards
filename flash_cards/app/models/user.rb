@@ -12,9 +12,10 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(email, password)
+    puts "Authenticate is firing"
     @user = User.find_by_email(email)
     return @user if @user && @user.password == password
-    return nil
+    # return nil
   end
 
 end
