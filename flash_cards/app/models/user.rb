@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => /.+@.+\..+/, :on => :create
-  validates :password, presence: true
+  validates :password_hash, presence: true
 
   has_many :decks
   has_many :rounds
