@@ -1,38 +1,60 @@
 <!-- UPDATE DECK FORM (include delete button) -->
+<div class='container'>
+  <div class="deck-crud">
+    <h2>Update Deck Name</h2>
+    <form action="/deck/update/<%= @deck.id %>" method="post">
 
-<div class="deck-crud">
-  <h2>Update Deck Name</h2>
-  <form action="/deck/update/<%= @deck.id %>" method="post">
+      <input type="text" name="deck_name" value="<%= @deck.name %>"></input>
 
-    <input type="text" name="deck_name" value="<%= @deck.name %>"></input>
+      <button type="submit">Update Deck!</button>
+    </form>
+  </div>
 
-    <button type="submit">Update Deck!</button>
-  </form>
-<div>
+  <div class="show-cards">
+    <h3>All Current Cards</h3>
+    <% @deck.cards.each do |card_obj| %>
+    <table border="1" style="width:600px">
+    <tr>
+      <td id="c1"><%= card_obj.question %></td>
+      <td id="c2"><%= card_obj.answer %></td>
+      <td id="c3">
+        <button type="submit"><a href='/card/update/<%= @deck.id %>/<%= card_obj.id %>'>Edit</a></button>
+        <!-- <form method="post" action="/card/update/<%= @deck.id %>/<%= card_obj.id %>">
+          <input type="submit" value="Edit">
+        </form> -->
+      </td>
+      <td id="c4">
+        <form method="post" action="/card/delete/<%= @deck.id %>/<%= card_obj.id %>">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
+    </tr>
+      <% end %>
+    </table>
+  </div>
+   <br><br>
 
-<div class="show-cards">
-  <h3>All Current Cards</h3>
-  <% @deck.cards.each do |card_obj| %>
-  <table border="1" style="width:650px">
-  <tr>
-    <td id="c1"><%= card_obj.question %></td>
-    <td id="c2"><%= card_obj.answer %></td>
-    <td id="c3">
-      <form method="post" action="/card/update/<%= @deck.id %>/<%= card_obj.id %>">
-        <input type="submit" value="Edit">
-      </form></td>
-    <td id="c4">
-      <form method="post" action="/card/delete/<%= @deck.id %>/<%= card_obj.id %>">
-        <input type="submit" value="Delete">
-      </form></td>
-  </tr>
-    <% end %>
-  </table>
+  <div class="delete-deck">
+    <form method="post" action="/deck/delete/<%= @deck.id %>">
+      <input type="hidden" name="_method" value="delete"/>
+      <input type="submit" value="Delete Deck Forever">
+    </form>
+  </div>
 </div>
- <br><br>
-<div class="delete-deck">
-  <form method="post" action="/deck/delete/<%= @deck.id %>">
-    <input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete Deck Forever">
-  </form>
+
+
+<% if @card %>
+<div class='container' id='#card_info'>
+
+    <h4>Update your Flashcard below:</h4>
+    <form action='/card/update' method='post'>
+      <input type='hidden' name='_method' value="patch"/>
+      <input type='hidden' name='card_id' value='<%= @card.id %>'/>
+      <input type="text" name="card[question]" value="<%= @card.question %>"/>
+      <input type="text" name="card[answer]" value="<%= @card.answer %>"/>
+      <button type='submit'>Update</button>
+    </form>
+
 </div>
+<% end %>
+

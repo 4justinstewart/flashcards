@@ -3,7 +3,7 @@
 <!-- IF VALIDATION FAILS ERRORS MESSAGE-->
 
 <div class="card-crud">
-  <h2>Creat some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
+  <h2>Create some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
   <form action="/card/new/<%= @deck.id %>" method="post">
 
     <input type="text" name="card_question" placeholder="Question"></input>
