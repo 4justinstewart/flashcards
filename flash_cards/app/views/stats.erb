@@ -1,1 +1,46 @@
 <!-- This is where stats stuff goes for now... -->
+
+<!-- 1. we want to be able to classify decks by their difficulty
+2. to do this we can take each deck and find the % correct in each of them
+3. we can display this using a D3 bar graphs (the tallest graphs will also be the easiest ones)  -->
+
+
+
+
+
+<div class="decks_chart">
+<!-- this is where javascript / D3 goes -->
+	
+
+	<%= column_chart @data, {library: {hAxis: {title: "Deck Name"}, vAxis: {title: "Percent Correct Guesses"}}}%>
+
+</div>
+
+	<%= bar_chart @stats_by_deck, {library: {hAxis: {title: "Percent Correct Guesses"}, vAxis: {title: "Deck Name"}, colors: ["blue", "green", "purple", "brown", "black", "yellow"]}} %>
+
+<div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<style type="text/css">
+	.decks_chart{
+		height: 300px;
+		width: 400px;
+		border: solid 1px black; 
+
+	}
+
+
+</style>
+
+
+
+
