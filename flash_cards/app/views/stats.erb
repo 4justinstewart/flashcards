@@ -16,7 +16,10 @@
 
 </div>
 
-	<%= bar_chart @stats_by_deck, {library: {hAxis: {title: "Percent Correct Guesses"}, vAxis: {title: "Deck Name"}, colors: ["blue", "green", "purple", "brown", "black", "yellow"]}} %>
+	<%= bar_chart @stats_by_deck, {library: {hAxis: {title: "Percent Correct Guesses"}, vAxis: {title: "Deck Name"}}} %>
+
+
+
 
 <div>
 
@@ -30,16 +33,6 @@
 
 
 
-<style type="text/css">
-	.decks_chart{
-		height: 300px;
-		width: 400px;
-		border: solid 1px black; 
-
-	}
-
-
-</style>
 
 
 
