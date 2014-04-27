@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+
+  # Ron backend validations
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates_format_of :email, :with => /.+@.+\..+/, :on => :create
+  validates :password, presence: true
+
   has_many :decks
   has_many :rounds
 
