@@ -3,11 +3,9 @@ class Deck < ActiveRecord::Base
   has_many :cards
   has_many :rounds
 
-
-
   #Rohan-Stats
   def get_percent_correct
-  	((self.get_num_correct.to_f/self.get_num_guesses.to_f) * 100).round(2) 
+  	((self.get_num_correct.to_f/self.get_num_guesses.to_f) * 100).round(2)
   end
 
   def get_num_correct
@@ -22,7 +20,7 @@ class Deck < ActiveRecord::Base
   	return num_correct_guesses
   end
 
-  def get_num_guesses 
+  def get_num_guesses
   	num_total_guesses = 0
   	self.rounds.each do |round|
   		num_total_guesses += round.guesses.count
