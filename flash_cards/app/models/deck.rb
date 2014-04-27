@@ -1,4 +1,8 @@
 class Deck < ActiveRecord::Base
+
+  # Ron validations
+  validates :name, presence: true, uniqueness: true
+
   belongs_to :user
   has_many :cards
   has_many :rounds
