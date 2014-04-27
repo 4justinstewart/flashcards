@@ -18,8 +18,6 @@ post '/deck/new' do
 end
 
 
-
-
 get '/card/new/:d_id' do
   @deck = Deck.find(params[:d_id])
   erb :new_card
@@ -32,9 +30,11 @@ post '/card/new/:d_id' do
   redirect to "/card/new/#{@deck.id}"
 end
 
-
-
-
+get '/card/update/:d_id/:c_id' do #/decks/:id/edit
+  @card = Card.find(params[:c_id])
+  @deck = Deck.find(params[:d_id])
+  erb :update_deck
+end
 
 get '/deck/update/:d_id' do #/decks/:id/edit
   @deck = Deck.find(params[:d_id])
@@ -48,12 +48,10 @@ post '/deck/update/:d_id' do
 end
 
 
-get '/card/update/:d_id' do #/decks/:id/edit
- puts "CARD UPDATE"
-end
+patch '/card/update' do
+  p params
 
-post '/card/update/:d_id' do
-
+  #redirect to '/deck/update/:d_id'
 end
 
 
