@@ -1,35 +1,36 @@
 <!-- NEW CARD FORM -->
 
 <!-- IF VALIDATION FAILS ERRORS MESSAGE-->
+<div class='container'>
+  <div class="card-crud">
+    <h2>Create some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
+    <form action="/card/new/<%= @deck.id %>" method="post">
 
-<div class="card-crud">
-  <h2>Create some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
-  <form action="/card/new/<%= @deck.id %>" method="post">
+      <input type="text" name="card_question" placeholder="Question" autofocus></input>
+      <input type="text" name="card_answer" placeholder="Answer"></input>
 
-    <input type="text" name="card_question" placeholder="Question"></input>
-    <input type="text" name="card_answer" placeholder="Answer"></input>
-
-    <button type="submit">Create New Card!</button>
-  </form>
-<div>
+      <button type="submit">Create New Card!</button>
+    </form>
+  <div>
 
 
-<div class="show-cards">
-  <h3>All Current Cards</h3>
-  <% @deck.cards.each do |card_obj| %>
-  <table border="1" style="width:650px">
-  <tr>
-    <td id="c1"><%= card_obj.question %></td>
-    <td id="c2"><%= card_obj.answer %></td>
-    <td id="c3">
-      <form method="post" action="/card/update/<% @deck.id %>/<%= card_obj.id %>">
-        <input type="submit" value="Edit">
-      </form></td>
-    <td id="c4">
-      <form method="post" action="/card/delete/<%= @deck.id %>/<%= card_obj.id %>">
-        <input type="submit" value="Delete">
-      </form></td>
-  </tr>
-    <% end %>
-  </table>
+  <div class="show-cards">
+    <h3>All Current Cards</h3>
+    <% @deck.cards.each do |card_obj| %>
+    <table border="1" style="width:650px">
+    <tr>
+      <td id="c1"><%= card_obj.question %></td>
+      <td id="c2"><%= card_obj.answer %></td>
+      <td id="c3">
+        <form method="post" action="/card/update/<% @deck.id %>/<%= card_obj.id %>">
+          <input type="submit" value="Edit">
+        </form></td>
+      <td id="c4">
+        <form method="post" action="/card/delete/<%= @deck.id %>/<%= card_obj.id %>">
+          <input type="submit" value="Delete">
+        </form></td>
+    </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

@@ -1,9 +1,9 @@
 <div class='container'>
 
-  <h1><%= @card.question %></h1>
+  <h2>Question: <%= @card.question %></h2>
   <h4>Type your answer into each flashcard</h4>
   <form action='/current_game/<%= @round.id %>/<%= @card.id %>' method='post'>
-    <input type="text" placeholder="What's the answer?" name="response"/>
+    <input type="text" placeholder="What's the answer?" name="response" autofocus/>
     <button type='submit'>Next Card</button>
   </form>
   <div class="game-progress">
