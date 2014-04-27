@@ -1,6 +1,10 @@
 <div class='container'>
   <h1>Congrats!</h1>
-  <h1>You just finished the <%= @deck.name %> flashcards!</h1>
-  <h3>Stats</h3>
+  <h2>You just finished the <%= @deck.name %> flashcards!</h2>
 
+  <div class="game-progress">
+    <h4>Game Progress</h4>
+    <p>The last question was <%= @last_question_status %></p>
+    <p>You answered <%= @num_correct %> of <%= @total_cards %> cards (<%= @percent_correct %>%) correctly.</p>
+  </div>
 </div>

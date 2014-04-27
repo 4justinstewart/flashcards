@@ -6,5 +6,11 @@
     <input type="text" placeholder="What's the answer?" name="response"/>
     <button type='submit'>Next Card</button>
   </form>
+  <div class="game-progress">
+    <h4>Game Progress</h4>
+    <p>The last question was <%= @last_question_status %></p>
+    <p>You have answered <%= @num_correct %> cards (<%= @percent_correct %>%) correctly.</p>
+    <p><%= @total_guesses %> of <%= @total_cards %> cards have been played.</p>
+  </div>
 
 </div>
