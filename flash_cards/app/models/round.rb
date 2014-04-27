@@ -36,5 +36,12 @@ class Round < ActiveRecord::Base
   	((self.get_num_correct.to_f/self.get_num_guesses.to_f) * 100).round(2)
   end
 
+  def total_cards
+    self.deck.cards.length
+  end
 
+  def last_question_status
+    return "correct!" if self.guesses.last.correct == true
+    return "wrong." if self.guesses.last.correct == false
+  end
 end
