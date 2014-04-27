@@ -17,18 +17,23 @@
   <div class="show-cards">
     <h3>All Current Cards</h3>
     <% @deck.cards.each do |card_obj| %>
-    <table border="1" style="width:650px">
+    <table border="1" style="width:600px" >
     <tr>
-      <td id="c1"><%= card_obj.question %></td>
-      <td id="c2"><%= card_obj.answer %></td>
-      <td id="c3">
+      <th>Question</th>
+      <th>Answer</th>
+
+     <!--  <td id="c3">
         <form method="post" action="/card/update/<% @deck.id %>/<%= card_obj.id %>">
           <input type="submit" value="Edit">
-        </form></td>
-      <td id="c4">
+        </form></td> -->
+     <!--  <td id="c4">
         <form method="post" action="/card/delete/<%= @deck.id %>/<%= card_obj.id %>">
           <input type="submit" value="Delete">
-        </form></td>
+        </form></td> -->
+    </tr>
+    <tr>
+       <td id="c1"><%= card_obj.question %></td>
+      <td id="c2"><%= card_obj.answer %></td>
     </tr>
       <% end %>
     </table>

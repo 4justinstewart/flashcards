@@ -16,7 +16,7 @@ end
 post '/current_game/:round_id/:card_id' do
   @round = Round.find(params[:round_id])
   @card = Card.find(params[:card_id])
-  @guess = Guess.create(word: params[:response], correct: (params[:response] == @card.answer), round_id: @round.id, card_id: @card.id)
+  @guess = Guess.create(word: params[:response], correct: (params[:response].downcase.strip == @card.answer.downcase.strip), round_id: @round.id, card_id: @card.id)
   redirect to "/current_game/#{@round.id}"
 end
 
