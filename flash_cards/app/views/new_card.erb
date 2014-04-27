@@ -6,7 +6,7 @@
     <h2>Create some Cards for the "<%= @deck.name.capitalize %>" deck!</h2>
     <form action="/card/new/<%= @deck.id %>" method="post">
 
-      <input type="text" name="card_question" placeholder="Question"></input>
+      <input type="text" name="card_question" placeholder="Question" autofocus></input>
       <input type="text" name="card_answer" placeholder="Answer"></input>
 
       <button type="submit">Create New Card!</button>

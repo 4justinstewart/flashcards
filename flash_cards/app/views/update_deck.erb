@@ -4,7 +4,7 @@
     <h2>Update Deck Name</h2>
     <form action="/deck/update/<%= @deck.id %>" method="post">
 
-      <input type="text" name="deck_name" value="<%= @deck.name %>"></input>
+      <input type="text" name="deck_name" value="<%= @deck.name %>" autofocus></input>
 
       <button type="submit">Update Deck!</button>
     </form>
@@ -50,7 +50,7 @@
     <form action='/card/update' method='post'>
       <input type='hidden' name='_method' value="patch"/>
       <input type='hidden' name='card_id' value='<%= @card.id %>'/>
-      <input type="text" name="card[question]" value="<%= @card.question %>"/>
+      <input type="text" name="card[question]" value="<%= @card.question %>" autofocus/>
       <input type="text" name="card[answer]" value="<%= @card.answer %>"/>
       <button type='submit'>Update</button>
     </form>

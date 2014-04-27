@@ -7,8 +7,7 @@
 
 	<div>
 		<h2>Pick a deck:</h2>
-			List all available decks:
-		<ul>
+		<ul id='deck-nav'>
 			<% @decks.each do |deck| %>
 				<li><a href="/start_game/<%= deck.id %>"><%= deck.name %></a></li>
 			<% end %>
@@ -16,11 +15,11 @@
 	</div>
 
 	<div>
-		<h2><a href="/deck/new">Create a New Deck</a></h2>
+		<h2><button><a href="/deck/new">Create a New Deck</a></button></h2>
 	</div>
 
 	<div>
-		<h2><a href="/my_decks">Manage My Decks</a></h2>
+		<h2><button><a href="/my_decks">Manage My Decks</a></button></h2>
 	</div>
 
 	<div>
