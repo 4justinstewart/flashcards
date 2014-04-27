@@ -47,11 +47,11 @@
 <div class='container' id='#card_info'>
 
     <h4>Update your Flashcard below:</h4>
-    <form action='/card/update' method='patch'>
+    <form action='/card/update' method='post'>
       <input type='hidden' name='_method' value="patch"/>
       <input type='hidden' name='card_id' value='<%= @card.id %>'/>
-      <input type="text" name="card_question" value="card[<%= @card.question %>]"/>
-      <input type="text" name="card_answer" value="card[<%= @card.answer %>]"/>
+      <input type="text" name="card[question]" value="<%= @card.question %>"/>
+      <input type="text" name="card[answer]" value="<%= @card.answer %>"/>
       <button type='submit'>Update</button>
     </form>
 

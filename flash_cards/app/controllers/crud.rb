@@ -49,13 +49,13 @@ end
 
 
 patch '/card/update' do
+  puts "Do I get here?"
   p params
+  @card_to_update = Card.find(params[:card_id])
+  @card_to_update.update_attributes(params[:card])
 
-  #redirect to '/deck/update/:d_id'
+  redirect to "/deck/update/#{@card_to_update.deck.id}"
 end
-
-
-
 
 
 delete '/deck/delete/:d_id' do
