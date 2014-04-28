@@ -7,7 +7,7 @@
   </div>
 
   <div>
-    <ul>
+    <ul id="my-decks-list">
       <% @my_decks.each do |deck| %>
         <li><a href="/deck/update/<%= deck.id %>"><%= deck.name %></a></li>
       <% end %>

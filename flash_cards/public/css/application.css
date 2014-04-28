@@ -2,47 +2,96 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 4px solid #234209;
-  background-color: #3f7611;
+  background-color: #f4f4f4;
   border-radius: 3px;
-  -moz-box-shadow: 0 0 20px 1px #6a9c42;
-  -webkit-box-shadow: 0 0 20px 1px #6a9c42;
-  box-shadow: 0 0 20px 1px #6a9c42;
 
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
 }
 
 body {
-  background-color: #ddedd0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
 }
 
 h1 {
+  padding: 10px 10px 10px 10px;
+  border-bottom: 2px solid #eeeeee;
+  font-size: 2.5em;
+  font-family: 'PT Mono', sans-serif;
+}
+
+#welcome { 
+  font-size: 1.25em;
+  font-family: 'PT Mono', sans-serif;
+}
+
+#welcome h2 {
+  margin: 7px;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+#deck-nav {
+  margin-left: -40px;
   text-align: center;
-  padding: 0px 10px 10px 10px;
-  border-bottom: 2px solid #c7dab8;
-  font-size: 2.500em;
-  font-family: Helvetica, sans-serif;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 20px;
+}
+
+#create-new {
+  margin-right: 0px;
+}
+
+#create-new button {
+  float: left;
+  margin-bottom: 20px;
+}
+
+
+#my-decks button {
+  float: right;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+#stats {
+  clear: both;
+  border-top: 2px solid #eeeeee;
+}
+
+#stats h2 {
+  padding: 5px 0 0 0;
+  margin-top: 20px;
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+#my-decks-list {
+  margin-left: -40px;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
   font-size: 20px;
-  font-weight: bold;
 }
 
 a:link {
-  color: #2a4f0b;
+  color: black;
 }
 
 a:visited {
-  color: #1c3407;
+  color: black;
 }
 
 a:hover {
-  color: #c7dab8;
-}
-
-a:active {
-
+  color: #fc9b18;
 }
 
 input {
@@ -61,17 +110,33 @@ button {
   padding: 5px 15px;
   margin: 0 15px;
   width: 40%;
-  border-color: #7da859;
   border-radius: 5px;
-  background-color: #ddedd0;
+  color: black;
   display: inline;
 }
 
 button a:hover {
-  color: #0e1a03;
+  color: white;
   font-size: 21px;
 }
 
+button#create-new-deck {
+  color: black;
+}
+
+button#create-new-card {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-crud h2, #current-q h2{
+  padding-top: 10px;
+}
+
+#signup-button {
+  border-radius: 5px;
+}
 
 /*----RONS STYLING FOR NAV BAR------*/
 
