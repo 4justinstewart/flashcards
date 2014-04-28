@@ -1,12 +1,15 @@
 <div class = "container">
 
-	<div>
+	<div id="dash">
 		<h1>Dashboard</h1>
+	</div>
+
+	<div id="welcome">
 		<h2>Welcome, <%= @user.first_name%>!</h2>
 	</div>
 
-	<div>
-		<h2>Pick a deck:</h2>
+	<div id="deck-select">
+		<h2>Pick a Deck to Begin Playing:</h2>
 		<ul id='deck-nav'>
 			<% @decks.each do |deck| %>
 				<li><a href="/start_game/<%= deck.id %>"><%= deck.name %></a></li>
@@ -14,24 +17,24 @@
 		</ul>
 	</div>
 
-	<div>
+	<div id="create-new">
 		<h2><button><a href="/deck/new">Create a New Deck</a></button></h2>
 	</div>
 
-	<div>
+	<div id="my-decks">
 		<h2><button><a href="/my_decks">Manage My Decks</a></button></h2>
 	</div>
 
-	<div>
-		<h2>Stats</h2>
-			<h3  align="center" style="color: purple; text-decoration: underline;"> All Users </h3>
+	<div id="stats">
+		<h2>Statistics</h2>
+			<h3  align="center"> All Users </h3>
 			<div class="deck_stats">	
 			<%= column_chart @deck_stats_by_deck, {library: {colors: ["purple"], hAxis: {title: "Deck Name"}, vAxis: {title: "Percent Correct Guesses"}}}%>
 			</div>
 
 			<br>
 
-			<h3 align="center" style="color: blue; text-decoration: underline;"><%= @user.first_name%>'s</h3>
+			<h3 align="center"><%= @user.first_name%>'s</h3>
 			<div id = "user-stats">
 			<%= bar_chart @user_stats_by_deck, {library: {hAxis: {title: "Percent Correct Guesses"}, vAxis: {title: "Deck Name"}}} %>
 			</div>
